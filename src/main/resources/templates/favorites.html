@@ -45,8 +45,9 @@
     </div>
     <div class="gifs container">
         <div class="row">
-            <h1>Miejsce na wyświetlanie gifów:)</h1>
-        </div>
+            <div th:each="gif : ${gifs}" class="col s12 l4">
+                <img th:src="${gif.getUrl()}">
+            </div>
     </div>
 
 <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
