@@ -37,24 +37,6 @@ public class Gif {
         this.name = name;
     }
 
-    public static List<Gif>getGifs(){
-        List<Gif>gifs=new ArrayList<>();
-        gifs.add(new Gif("android-explosion","programming",true));
-        gifs.add(new Gif("ben-and-mike","bot",true));
-        gifs.add(new Gif("book-dominos","bot",false));
-        gifs.add(new Gif("compiler-bot","others",false));
-        gifs.add(new Gif("cowboy-coder","programming",false));
-        gifs.add(new Gif("infinite-andrew","other",true));
-            return gifs;
-    }
 
-    public static List<Gif> getFavorites(){
-
-
-        List<Gif> gifs = getGifs();
-        gifs.removeIf(s->s.isFavorite==false);
-
-        return gifs;
-    }
 
 }
