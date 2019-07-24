@@ -30,7 +30,7 @@ public class GifSimpleRepository implements GifRepository {
     @Override
     public List<Gif> getFavorites() {
         List<Gif> gifs = getGifs();
-        gifs.removeIf(s->s.getFavorite()==false);
+        gifs.removeIf(s -> s.getFavorite() == false);
         return gifs;
     }
 
