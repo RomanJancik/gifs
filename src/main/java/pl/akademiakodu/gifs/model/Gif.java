@@ -34,6 +34,8 @@ public class Gif {
         return "/gifs/"+name+".gif";
     }
 
+    public String getDetailsUrl(){return "/gif/"+name;}
+
     public String getName() {
         return name;
     }
