@@ -19,6 +19,11 @@ public class GifSimpleRepository implements GifRepository {
         gifs.add(new Gif("compiler-bot",2,false));
         gifs.add(new Gif("cowboy-coder",3,false));
         gifs.add(new Gif("infinite-andrew",3,true));
+        gifs.add(new Gif("borat",3,true));
+        gifs.add(new Gif("dogs",3,true));
+        gifs.add(new Gif("dogsmile",3,true));
+        gifs.add(new Gif("shaq",3,true));
+        gifs.add(new Gif("tenor",3,true));
         return gifs;
     }
 
