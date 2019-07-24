@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.akademiakodu.gifs.model.Gif;
 import pl.akademiakodu.gifs.repository.GifRepository;
@@ -24,9 +25,12 @@ public class GifController {
         //gifRepository= new GifSimpleRepository()'
 
     @GetMapping("/")
-    public String home (ModelMap map){
-
+    public String home (@RequestParam(required = false) String q, ModelMap map){
+        if(q==null){
         map.put("gifs", gifRepository.getGifs());
+        }else {
+            map.put("gifs",gifRepository.findByName(q));
+        }
         return "home";
     }
 
@@ -38,7 +42,12 @@ public class GifController {
     }
 
 
-
+    @GetMapping("/gif/{name}")
+    public String getGif (@PathVariable String name, ModelMap map){
+        map.put("gif",gifRepository.findByName(name));
+        System.out.println("result"+gifRepository.findByName(name).getName());
+        return "gif-details";
+    }
 
 
 }

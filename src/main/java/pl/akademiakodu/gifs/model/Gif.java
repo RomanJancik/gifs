@@ -8,13 +8,13 @@ public class Gif {
 
     private String name;
     private  int categoryId;
-    private Boolean isFavorite;
+    private boolean favorite;
 
 
-    public Gif(String name, int category, Boolean isFavorite) {
+    public Gif(String name, int category, boolean isFavorite) {
         this.name = name;
         this.categoryId = category;
-        this.isFavorite = isFavorite;
+        this.favorite = isFavorite;
     }
 
     public Gif(String name, int category) {
@@ -26,8 +26,8 @@ public class Gif {
         return categoryId;
     }
 
-    public Boolean getFavorite() {
-        return isFavorite;
+    public Boolean getfavorite() {
+        return favorite;
     }
 
     public String getUrl(){

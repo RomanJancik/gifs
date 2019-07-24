@@ -28,7 +28,7 @@ public class CategoryController {
     @GetMapping("/category/{id}")
     public String show(@PathVariable Integer id, ModelMap map) {
         map.put("gifs", gifRepository.getGifsByCategoryId(id));
-        map.put("category",categoryRepository.getCategoryById(id));
+        map.put("category",categoryRepository.getCategoryById(id)); // zawracany jest obiekt klasy category
         return "category";
     }
 

@@ -4,8 +4,12 @@ package pl.akademiakodu.gifs.repository;
 import org.springframework.stereotype.Component;
 import pl.akademiakodu.gifs.model.Gif;
 
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 @Component
 public class GifSimpleRepository implements GifRepository {
     @Override
@@ -27,10 +31,12 @@ public class GifSimpleRepository implements GifRepository {
         return gifs;
     }
 
+
+
     @Override
     public List<Gif> getFavorites() {
         List<Gif> gifs = getGifs();
-        gifs.removeIf(s -> s.getFavorite() == false);
+        gifs.removeIf(s -> s.getfavorite() == false);
         return gifs;
     }
 
@@ -41,6 +47,13 @@ public class GifSimpleRepository implements GifRepository {
         return gifs;
     }
 
+    @Override
+    public Gif findByName(String name) {
+        return getGifs().stream().filter(gif->gif.getName().
+                equals(name)).collect(Collectors.toList()).get(0);
+
+
+    }
 
 
 }

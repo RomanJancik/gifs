@@ -9,4 +9,5 @@ public interface GifRepository {
     List<Gif>getGifs();
     List<Gif>getFavorites();
     List<Gif>getGifsByCategoryId(int id);
+    Gif findByName(String name );
 }
