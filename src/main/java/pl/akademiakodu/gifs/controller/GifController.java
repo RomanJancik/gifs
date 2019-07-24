@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pl.akademiakodu.gifs.model.Gif;
 import pl.akademiakodu.gifs.repository.GifRepository;
 
-@Controller
 
+@Controller
 public class GifController {
+
+    /*
+        Spring szuka klasy ,która implementuje interfejs GifRepository
+        i jest dodatkowo componentem , beanem
+     */
 
     @Autowired
     private GifRepository gifRepository;
+        //gifRepository= new GifSimpleRepository()'
 
     @GetMapping("/")
     public String home (ModelMap map){
@@ -33,8 +39,9 @@ public class GifController {
 
 
     @GetMapping("/category/{id}")
-    public String getCategory(@PathVariable String id ,ModelMap map) {
-
+    public String getCategory( @PathVariable  String id, ModelMap map) {
+        int i= Integer.parseInt(id);
+        map.put("gifs", gifRepository.getGifsByCategoryId(i));
 
         return "category";
     }
