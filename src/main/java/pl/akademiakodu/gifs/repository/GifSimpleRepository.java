@@ -13,12 +13,12 @@ public class GifSimpleRepository implements GifRepository {
 
 
         List<Gif>gifs=new ArrayList<>();
-        gifs.add(new Gif("android-explosion","programming",true));
-        gifs.add(new Gif("ben-and-mike","bot",true));
-        gifs.add(new Gif("book-dominos","bot",false));
-        gifs.add(new Gif("compiler-bot","others",false));
-        gifs.add(new Gif("cowboy-coder","programming",false));
-        gifs.add(new Gif("infinite-andrew","other",true));
+        gifs.add(new Gif("android-explosion",1,true));
+        gifs.add(new Gif("ben-and-mike",2,true));
+        gifs.add(new Gif("book-dominos",1,false));
+        gifs.add(new Gif("compiler-bot",2,false));
+        gifs.add(new Gif("cowboy-coder",3,false));
+        gifs.add(new Gif("infinite-andrew",3,true));
         return gifs;
     }
 
@@ -29,12 +29,13 @@ public class GifSimpleRepository implements GifRepository {
         return gifs;
     }
 
-
-
     @Override
-    public List<Gif> getCategory(String category) {
+    public List<Gif> getGifsByCategoryId(int id) {
         List<Gif>gifs=getGifs();
-        gifs.removeIf(s->s.getCategory().equals(category));
+        gifs.removeIf(s->s.getCategory()!=id);
         return gifs;
     }
+
+
+
 }

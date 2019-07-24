@@ -7,18 +7,23 @@ import java.util.List;
 public class Gif {
 
     private String name;
-    private  String category;
+    private  int categoryId;
     private Boolean isFavorite;
 
 
-    public Gif(String name, String category, Boolean isFavorite) {
+    public Gif(String name, int category, Boolean isFavorite) {
         this.name = name;
-        this.category = category;
+        this.categoryId = category;
         this.isFavorite = isFavorite;
     }
 
-    public String getCategory() {
-        return category;
+    public Gif(String name, int category) {
+        this.name = name;
+        this.categoryId = category;
+    }
+
+    public int getCategory() {
+        return categoryId;
     }
 
     public Boolean getFavorite() {
