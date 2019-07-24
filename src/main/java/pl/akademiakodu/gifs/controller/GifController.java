@@ -38,13 +38,7 @@ public class GifController {
     }
 
 
-    @GetMapping("/category/{id}")
-    public String getCategory( @PathVariable  String id, ModelMap map) {
-        int i= Integer.parseInt(id);
-        map.put("gifs", gifRepository.getGifsByCategoryId(i));
 
-        return "category";
-    }
 
 
 }
