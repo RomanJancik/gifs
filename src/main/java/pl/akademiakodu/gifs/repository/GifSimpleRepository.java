@@ -13,12 +13,16 @@ public class GifSimpleRepository implements GifRepository {
 
 
         List<Gif>gifs=new ArrayList<>();
-        gifs.add(new Gif("android-explosion","programming",true));
-        gifs.add(new Gif("ben-and-mike","bot",true));
+        gifs.add(new Gif("android-explosion","programming",false));
+        gifs.add(new Gif("ben-and-mike","bot",false));
         gifs.add(new Gif("book-dominos","bot",false));
         gifs.add(new Gif("compiler-bot","others",false));
         gifs.add(new Gif("cowboy-coder","programming",false));
-        gifs.add(new Gif("infinite-andrew","other",true));
+        gifs.add(new Gif("borat","others",true));
+        gifs.add(new Gif("dogs","others",true));
+        gifs.add(new Gif("dogsmile","others",true));
+        gifs.add(new Gif("shaq","others",true));
+        gifs.add(new Gif("tenor","others",true));
         return gifs;
     }
 
